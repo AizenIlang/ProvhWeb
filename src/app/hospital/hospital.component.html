@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+
+            <mat-toolbar color="primary">
+                    <mat-toolbar-row>
+                            <span>HOSPITALS</span>
+                            <span class="example-spacer"></span>
+                            <button mat-button (click)="onCreate()"><mat-icon>add_box</mat-icon></button>
+                            
+                          </mat-toolbar-row>
+            </mat-toolbar>
+      
+
+            
+            <p></p>
+
+            <table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef> Hosital Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="Address">
+                    <th mat-header-cell *matHeaderCellDef> Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="ContactNumber">
+                    <th mat-header-cell *matHeaderCellDef> Contact Number </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ContactNumber}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="Email">
+                    <th mat-header-cell *matHeaderCellDef> Email </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+                </ng-container>
+
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons></mat-paginator>
+
+        </div>
+    </div>
+</div>
+<!-- <input type="file" (change)="startUpload($event.target.files)"> -->
+
+
+
+<!-- 
+
+    <div class="card col-sm-4">
+                    <div class="card-header">
+                        Hospital
+                    </div>
+                    <ul class="list-group list-group-flush">
+                            <li *ngFor="let hosp of Hospital" class="list-group-item">
+                                    {{hosp.Name}}
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="card col-sm-4">
+                    <div class="card-header">Users <a routerLink="/createuser">Add</a></div>
+                    <ul class="list-group list-group-flush">
+                        <li  *ngFor="let tempUser of UsersList" class="list-group-item">
+                            {{tempUser.firstName}}  {{tempUser.lastName}} {{tempUser.email}} <a routerLink="/edituser/{{tempUser.userKey}}">edit</a>
+                        </li>
+                    </ul>
+                </div> -->

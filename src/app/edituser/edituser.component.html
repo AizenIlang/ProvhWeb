@@ -1,0 +1,36 @@
+<div class="container h-100">
+  <div class="row">
+      
+          <div class="card col-sm-4">
+            <div class="card-body">
+              <h5 class="card-title">{{ userName }}</h5>
+              <input type="checkbox" /> Admin
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="firstName">
+                <input type="text" class="form-control" [(ngModel)]="middleName">
+                <input type="text" class="form-control" [(ngModel)]="lastName">
+                <input type="text" class="form-control" [(ngModel)]="date">
+                <input type="text" class="form-control" [(ngModel)]="password">
+                <input type="text" class="form-control" [(ngModel)]="userName">
+                <input type="text" class="form-control" [(ngModel)]="hospitalKey">
+              </div>
+              <a href="#" class="card-link">Delete</a>
+              <button (click)="update()" class="card-link">Update</button>
+      
+            </div>
+          </div>
+
+          <div class="card col-sm-4">
+              <div class="card-header">
+                  Hospital
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li *ngFor="let i of HospitalList.data">
+                      {{i.key}} : {{i.payload.val()}}
+                  </li>
+              </ul>
+          </div>
+        
+  </div>
+ 
+</div>

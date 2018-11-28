@@ -1,0 +1,70 @@
+<!-- <ul>
+  <li *ngFor="let users of Users">
+    {{users.firstName}}
+  </li>
+</ul>
+
+<input (keyup.enter)="add(user)" #user/> -->
+<!-- 
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Prov-H</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" >
+        <a class="nav-link" routerLinkActive="active current" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="user.isAdmin" >
+        <a class="nav-link" routerLinkActive="active current" routerLink="/admin">Admin <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="user.isAdmin" >
+          <a class="nav-link" routerLinkActive="active current" routerLink="/admin">Admin <span class="sr-only">(current)</span></a>
+        </li>
+         -->
+      
+    
+    <!-- </ul> -->
+    
+      <!-- <div class="badge badge-secondary"style="margin-right: 10px;">Hello {{ user.User.firstName }} </div>
+      <a href="#" *ngIf="user.uid | async as mainuser" (click)="user.logout()"><div>Log Out </div> </a>
+      <ng-template #login>
+        You need to <a class="nav-link" routerLink="/login">Login</a>
+      </ng-template> -->
+  <!-- </div>
+</nav> -->
+<mat-sidenav-container class="example-container"  *ngIf="user.uid | async as mainuser">
+  <mat-sidenav class="navcontain"  #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+               <mat-nav-list>
+                  <mat-list-item>
+                     <a matLine routerLink=""><div class="biggerNavButton">Home</div></a>
+                     
+                  </mat-list-item>
+
+                  <mat-list-item *ngIf="user.isAdmin">
+                      <a  matLine routerLink="admin"><div class="biggerNavButton">Admin</div></a>
+                      
+                   </mat-list-item>
+                </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+ 
+    
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+            <h5>PROV-H </h5>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+ 
+</mat-sidenav-container>
+
+

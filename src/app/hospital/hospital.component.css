@@ -1,0 +1,24 @@
+
+progress::-webkit-progress-value{
+    transition: width 0.1s ease;
+}
+
+mat-form-field.mat-form-field {
+    width: 100%;
+  }
+
+
+html, 
+body {
+    height: 100%;
+}
+
+table {
+    width: 100%;
+  }
+
+  .mat-cell {
+    color: #505050;
+    font-family: 'Roboto';
+}
+

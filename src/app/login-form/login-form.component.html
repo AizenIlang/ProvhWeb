@@ -1,0 +1,70 @@
+<!-- <div class="container col-sm-6 center">
+
+  <div class="card">
+    <h5 class="card-header">Login</h5>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div *ngIf="form.errors" class="alert alert-danger">The username or password is invalid.</div>
+        <div class="form-group" >
+          <label for="exampleInputEmail1">Username</label>
+          <input formControlName="UserName" id="UserName" name="UserName" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="username" placeholder="Username">
+          <small id="emailHelp" class="form-text text-muted">We'll never share username with anyone else.</small>
+          <div *ngIf="UserName.pending">Checking for Uniqueness...</div>
+          <div *ngIf="UserName.touched && UserName.invalid" class="alert alert-danger">
+            
+            <div *ngIf="UserName.errors.required">Username is required.</div>
+            <div *ngIf="UserName.errors.minlength">Minimum Length is {{ UserName.errors.minlength.requiredLength}}</div>
+            <div *ngIf="UserName.errors.cannotContainSpace">Username cannot contain space</div>
+            <div *ngIf="UserName.errors.shouldBeUnique">Username has already been taken.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input  formControlName="Password" id="Password" name="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div class="alert alert-danger" *ngIf="Password.touched && Password.invalid" >Password is required.</div>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div> -->
+<div *ngIf="form.errors" class="alert alert-danger">The username or password is invalid.</div>
+<mat-card class="loginCard"> 
+<form [formGroup]="form" (ngSubmit)="login()" >
+
+      <mat-form-field appearance="outline" class="fullwidth">
+       
+        <mat-label>Username</mat-label>
+        <input formControlName="UserName" class="fullwidth" matInput placeholder="Username">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <div *ngIf="UserName.touched && UserName.invalid" class="alert alert-danger">
+            
+            <div *ngIf="UserName.errors.required">Username is required.</div>
+            <div *ngIf="UserName.errors.minlength">Minimum Length is {{ UserName.errors.minlength.requiredLength}}</div>
+            <div *ngIf="UserName.errors.cannotContainSpace">Username cannot contain space</div>
+            <div *ngIf="UserName.errors.shouldBeUnique">Username has already been taken.</div>
+          </div>
+      </mat-form-field>
+    <p>
+        <mat-form-field appearance="outline" class="fullwidth">
+            <mat-label>Password</mat-label>
+            <input type="password" class="fullwidth" formControlName="Password" matInput placeholder="Password">
+            
+          </mat-form-field>
+    </p>
+     
+      <p><button type="submit" class="fullwidth"  mat-raised-button color="primary">Login</button></p>
+      
+     
+    
+</form>
+<p><button type="button" class="fullwidth" mat-raised-button (click)="onCreate()">Sign Up</button></p>
+
+</mat-card>
+
+
